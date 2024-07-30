@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Service Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,400;0,700;1,500;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/logo-small.svg') }}" alt="Logo" class="logo">
+            <div class="title-line"></div>
+            <div class="kiosktitle">
+                <span class="kiosk-title1">SELF SERVICE</span>
+                <span class="kiosk-title2">KIOSK</span>       
+            </div>
+        </div>
+        
+        <h1>Hey,</h1>
+        <h2>where's your vehicle?</h2>
+        
+        <div class="vehicle-selector">
+            <div class="slots">
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+                <div class="slot"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
