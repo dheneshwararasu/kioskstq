@@ -1,6 +1,5 @@
 body {
     font-family: sans-serif;
-    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,12 +33,9 @@ body {
   }  
 
 .container {
-    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 400px;
+    max-width: 800px;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -85,7 +81,7 @@ h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-    margin: 50px 0 0 0;
+    margin: 30px 0 0 0;
 }
 
 h2 {
@@ -95,32 +91,141 @@ h2 {
     margin: -5px 0;
 }
 
-.vehicle-selector{
-    margin: 20px 0 ;
+.slots-container {
+    margin-top: 20px;
     background-color: #F8F8F6;
-    border-radius: 14px;
     width: 100%;
-    height: 320px;
-}
-
-.slots {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 40px;
-    gap: 40px;
-    
-}
-
-.slot {
-    width: 20px;
-    padding-top: 5%; /* This ratio keeps the slot height proportional */
-    background-color: #5ab9a8;
     border-radius: 10px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.slot::after {
-    content: '';
-    display: block;
-    padding-bottom: 100%; /* Maintain aspect ratio */
+.slots-row {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.plate {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.pumps {
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    row-gap: 25px;
+    column-gap: 8px;
+}
+
+.pump-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pump-button img{
+    padding: 5px;
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    transition: all 0.2s;
+    border-radius: 10px;
+}
+
+.pump-text{
+    position: absolute;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+
+.pump-button.active img {
+    background-color: #FFCC5A; /* Change car color to yellow */
+    border-radius: 10px;
+}
+
+.pump-button.active .pump-text {
+    color: #FFCC5A; /* Change text color to yellow */
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.toggle-button {
+    width: 50%;
+    padding: 20px 20px;
+    background-color: #F8F8F6;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.toggle-button img {
+    fill: currentColor; /* Ensures the fill color is controlled by the button's color */
+}
+
+.toggle-button.active {
+    background-color: #FFCC5A;
+    color: black;
+    border-style: none;
+}
+
+.toggle-button.active img {
+    color: black; /* Change SVG fill to black when the button is active */
+}
+
+.amount-container {
+    margin: 20px 0;
+}
+
+#amount-slider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.amount-rm {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.amount-display {
+    display: flex;
+    justify-content: space-around;
+}
+.preauth-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ba99d;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
 }

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self Service Kiosk</title>
+    <title>STQ KIOSK</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-small.svg">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,15 +23,54 @@
         
         <h1>Hey,</h1>
         <h2>where's your vehicle?</h2>
-        
-        <div class="vehicle-selector">
-            <div class="slots">
-                <div class="slot"></div>
-                <div class="slot"></div>
-                <div class="slot"></div>
-                <div class="slot"></div>
+        <div class="slots-container">
+            <div class="slots-row">
+                
+                <div class="pumps">
+                    <button class="pump-button" onclick="toggleOption(this)">
+                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
+                        <span class="pump-text">1</span>
+                    </button>
+                    <button class="pump-button" onclick="toggleOption(this)">
+                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
+                        <span class="pump-text">2</span>
+                    </button>
+                    <button class="pump-button" onclick="toggleOption(this)">
+                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
+                        <span class="pump-text">3</span>
+                    </button>
+                    <button class="pump-button" onclick="toggleOption(this)">
+                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
+                        <span class="pump-text">4</span>
+                    </button>
+                </div>
             </div>
+        </div>    
+
+        <h1>Choose fuel.</h1>
+        <div class="buttons-container">
+            <button class="toggle-button" onclick="toggleOption(this)">
+                <img src="{{ url_for('static', filename='images/logo-primax-color-95.svg') }}" alt="RON 95">
+            </button>
+            <button class="toggle-button" onclick="toggleOption(this)">
+                <img src="{{ url_for('static', filename='images/logo-primax-color-97.svg') }}" alt="RON 97">
+            </button>
+            <button class="toggle-button" onclick="toggleOption(this)">Diesel</button>
+        </div>
+
+        <h1>How much?</h1>
+        <div class="amount-container">
+            <div class="amount-display">
+                <p class="amount-rm">RM <span id="amount-rm">0</span></p>
+            </div>
+            <input type="range" id="amount-slider" min="0" max="100" value="0" step="1" oninput="updateAmount()">
+            <div class="amount-display">
+                <p>Liters: <span id="amount-liters">0</span></p>
+            </div>
+            <button class="preauth-button">Pre-Auth Payment</button>
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
