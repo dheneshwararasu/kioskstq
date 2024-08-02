@@ -13,11 +13,31 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="{{ url_for('static', filename='images/logo-small.svg') }}" alt="Logo" class="logo">
-            <div class="title-line"></div>
-            <div class="kiosktitle">
-                <span class="kiosk-title1">SELF SERVICE</span>
-                <span class="kiosk-title2">KIOSK</span>       
+            <div class="kiosk-logo">
+                <img src="{{ url_for('static', filename='images/logo-small.svg') }}" alt="Logo" class="logo">
+                <div class="title-line"></div>
+                <div class="kiosktitle">
+                    <span class="kiosk-title1">SELF SERVICE</span>
+                    <span class="kiosk-title2">KIOSK</span>       
+                </div>
+            </div>
+            <div class="petrol-price">
+                <div class="fuel-ron95">
+                    <span class="fuelprice-heading">RON 95</span>
+                    <span class="fuelprice-p">RM2.07</span>
+                </div>
+                <div class="fuel-ron97">
+                    <span class="fuelprice-heading">RON 97</span>
+                    <span class="fuelprice-p">RM4.40</span>
+                </div>
+                <div class="fuel-euro5">
+                    <span class="fuelprice-heading">Euro 5 B7</span>
+                    <span class="fuelprice-p">RM3.50</span>
+                </div>
+                <div class="fuel-diesel">
+                    <span class="fuelprice-heading">Euro 5 B10</span>
+                    <span class="fuelprice-p">RM3.50</span>
+                </div>
             </div>
         </div>
         
@@ -50,12 +70,17 @@
         <h1>Choose fuel.</h1>
         <div class="buttons-container">
             <button class="toggle-button" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/logo-primax-color-95.svg') }}" alt="RON 95">
+                <img src="{{ url_for('static', filename='images/ron-95.png') }}" alt="RON 95">
             </button>
             <button class="toggle-button" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/logo-primax-color-97.svg') }}" alt="RON 97">
+                <img src="{{ url_for('static', filename='images/ron-97.png') }}" alt="RON 97">
             </button>
-            <button class="toggle-button" onclick="toggleOption(this)">Diesel</button>
+            <button class="toggle-button" onclick="toggleOption(this)">
+                <img src="{{ url_for('static', filename='images/euro5.png') }}" alt="Euro 5">
+            </button>
+            <button class="toggle-button" onclick="toggleOption(this)">
+                <img src="{{ url_for('static', filename='images/diesel.png') }}" alt="Diesel">
+            </button>
         </div>
 
         <h1>How much?</h1>
