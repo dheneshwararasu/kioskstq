@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <title>Latest Petrol Price Comparison in Malaysia 2024 | Motorist Malaysia</title>
+        <script>
+            !function(w) {
+                "use strict";
+                var loadCSS = function(href, before, media) {
+                    function ready(cb) {
+                        return doc.body ? cb() : void setTimeout(function() {
+                            ready(cb)
+                        })
+                    }
+                    function loadCB() {
+                        ss.addEventListener && ss.removeEventListener("load", loadCB),
+                        ss.media = media || "all"
+                    }
+                    var ref, doc = w.document, ss = doc.createElement("link");
+                    if (before)
+                        ref = before;
+                    else {
+                        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                        ref = refs[refs.length - 1]
+                    }
+                    var sheets = doc.styleSheets;
+                    ss.rel = "stylesheet",
+                    ss.href = href,
+                    ss.media = "only x",
+                    ready(function() {
+                        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling)
+                    });
+                    var onloadcssdefined = function(cb) {
+                        for (var resolvedHref = ss.href, i = sheets.length; i--; )
+                            if (sheets[i].href === resolvedHref)
+                                return cb();
+                        setTimeout(function() {
+                            onloadcssdefined(cb)
+                        })
+                    };
+                    return ss.addEventListener && ss.addEventListener("load", loadCB),
+                    ss.onloadcssdefined = onloadcssdefined,
+                    onloadcssdefined(loadCB),
+                    ss
+                };
+                "undefined" != typeof exports ? exports.loadCSS = loadCSS : w.loadCSS = loadCSS
+            }("undefined" != typeof global ? global : this);
+
+            !function(w) {
+                if (w.loadCSS) {
+                    var rp = loadCSS.relpreload = {};
+                    if (rp.support = function() {
+                        try {
+                            return w.document.createElement("link").relList.supports("preload")
+                        } catch (e) {
+                            return !1
+                        }
+                    }
+                    ,
+                    rp.poly = function() {
+                        for (var links = w.document.getElementsByTagName("link"), i = 0; i < links.length; i++) {
+                            var link = links[i];
+                            "preload" === link.rel && "style" === link.getAttribute("as") && (w.loadCSS(link.href, link),
+                            link.rel = null)
+                        }
+                    }
+                    ,
+                    !rp.support()) {
+                        rp.poly();
+                        var run = w.setInterval(rp.poly, 300);
+                        w.addEventListener && w.addEventListener("load", function() {
+                            w.clearInterval(run)
+                        }),
+                        w.attachEvent && w.attachEvent("onload", function() {
+                            w.clearInterval(run)
+                        })
+                    }
+                }
+            }(this);
+
+            function onJavascriptLoaded(callback) {
+                var varName = "interval" + (new Date()).getTime() + "_" + Math.floor((Math.random() * 100000) + 1);
+                window[varName] = window.setInterval(function() {
+                    if (window.allLibrariesLoaded) {
+                        callback();
+                        clearInterval(window[varName]);
+                        window[varName] = null;
+                    }
+                }, 25);
+            }
+        </script>
+        <!--[if IE 9]>
+      <link href="/assets/bootstrap-ie9.min-bc13ce70ee2ff8cdd9c673cf67705def2d73850de2052333c241bdfa9494b30d.css" rel="stylesheet">
+    <![endif]-->
+        <!--[if lte IE 8]>
+      <link href="/assets/bootstrap-ie8.min-25d1ad8a61439ef3d929285de2006a88e7910f7f7b7cdcd76a89d90267c1661c.css" rel="stylesheet">
+    <![endif]-->
+        <!--[if IE]>
+      <link href="/assets/ie-147e58fcf2ddde000f5fa19dc7f55c677db8b3a4bf8e46b17f0f0524d1ba1913.css" rel="stylesheet">
+    <![endif]-->
+        <script language="javascript">
+            window.getIEVersion = function() {
+                var sAgent = window.navigator.userAgent;
+                var Idx = sAgent.indexOf("MSIE");
+                if (Idx > 0) {
+                    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)))
+                } else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+                    return 11
+                } else {
+                    return 0
+                }
+            }
+            function asyncLoadBaseJS() {
+                var ie = window.getIEVersion();
+                var asyncLoadJS = (function() {
+                    function _load(tag) {
+                        return function(url, IEVersion) {
+                            return new Promise(function(resolve, reject) {
+                                if (typeof (IEVersion) !== 'undefined') {
+                                    if (ie === 0 || eval(ie + " " + IEVersion) == !1) {
+                                        return resolve(url)
+                                    }
+                                }
+                                var element = document.createElement(tag);
+                                var parent = 'head';
+                                var attr = 'src';
+                                element.onload = function() {
+                                    resolve(url)
+                                }
+                                ;
+                                element.onerror = function() {
+                                    reject(url)
+                                }
+                                ;
+                                element.async = !0;
+                                element[attr] = url;
+                                document[parent].appendChild(element)
+                            }
+                            )
+                        }
+                    }
+                    return {
+                        js: _load('script')
+                    }
+                }
+                )();
+                var shouldLoadjQuery3_31 = ie === 0 || ie > 8;
+                Promise.all([shouldLoadjQuery3_31 ? asyncLoadJS.js("/assets/jquery-3.3.1.slim.min-8bc76a4551315c84318f0e5ff9d6dc88ceffaef08c227160fbfdd0f02b8fee7c.js") : asyncLoadJS.js("/assets/jquery-1.12.4.min-5949e8377900cc6df203892c5f353a36cbf307cd93bd0e671f83555c6cb92d27.js")]).then(function() {
+                    Promise.all([asyncLoadJS.js("/assets/bootstrap-with-popper.min-e4077eca1c02df587d894fe255257de6272f555ab8a4f78f45453517e2dc2f91.js"), asyncLoadJS.js("/assets/bootstrap-ie9.min-5096565fab8693dd1365ba8d566faf56f95550ae299a0751c8e3ac5f6aaac5b4.js", '== 9'), asyncLoadJS.js("/assets/bootstrap-ie8.min-af4d54105ac04b03665026d1a30101b53ab848a865dd04f17b7320249acbc2ca.js", '<= 8'), asyncLoadJS.js("/assets/html5shiv-eb5a4ca33ca793da2d6c4b1a6409c81a7ba7763fef52c918b3c6f80e166d4118.js", '<= 8')]).then(function() {
+                        $("<script src='/assets/social-share-button-931c60b7743514505558240c46339f3b1d3daaf2dc781ede956768a980f11c84.js'><\/script>").appendTo(document.head)
+
+                        $('<script src="/assets/base/application-017282bb54b8b8fde6c77c4a33558f113f39f484353ebdd928833424e586750d.js" data-turbolinks-track="reload" async="async"><\/script>').appendTo(document.head);
+                    }).catch(function(e) {
+                        console.log(e)
+                    })
+                })
+            }
+            if (!window.Turbolinks) {
+                asyncLoadBaseJS()
+            }
+        </script>
+    </head>
+    <body class="  d-flex flex-column h-100 " data-locale="en-MY">
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFSLMQ33" height="0" width="0" style="display:none;visibility:hidden" title=""></iframe>
+        </noscript>
+        <header>
+        </header>
+
+        <main role="main" class="flex-shrink-0  ">
+            <div class="container-fluid container-empty-sub">
+
+                <div class="container pb-5 fuel_comparison">
+                    <div class="row">
+                        <div class="col-12 mb-5">
+                            <div class="coe-results-div p-md-4 rounded-10">
+                                <div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <h2 class="header text-left">Latest Pump Prices</h2>
+                                        <a href="#" class="ml-auto">
+                                            <i class="icon-share social-sharer icon-circle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mb-3 font-14">
+                                        by <img class="ml-1 lazy" width="100px" data-src="/assets/logo-7368de77702b2ee80c36b09798305083b0819e6698c3748f37920f86c95898bb.svg">
+                                    </div>
+                                    <div class="d-flex font-12 font-weight-600 px-3">Grade</div>
+                                    <div class="d-flex fuel_comparison-my flex-column">
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>RON 95</div>
+                                            <div class="font-weight-600">RM 2.05</div>
+                                        </div>
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>RON 97</div>
+                                            <div class="font-weight-600">RM 3.47</div>
+                                        </div>
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>RON 100</div>
+                                            <div class="font-weight-600">RM 5.00</div>
+                                        </div>
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>V-Power Racing</div>
+                                            <div class="font-weight-600">RM 6.30</div>
+                                        </div>
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>Diesel Euro 5 B10</div>
+                                            <div class="font-weight-600">RM 3.35</div>
+                                        </div>
+                                        <div class=" d-flex justify-content-between p-3 font-chart">
+                                            <div>Diesel Euro 5 B7</div>
+                                            <div class="font-weight-600">RM 3.55</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-3">
+                        <h2 class="header text-left">Fuel Prices Trend</h2>
+                    </div>
+                    <div class="row no-gutters rounded-10 mb-3 mb-sm-2 px-lg-2 py-0 py-lg-3 fuelgraphfilter">
+                        <div class="col-lg-6 py-2 py-lg-1 px-lg-2">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <div class="fuelfilter text-left pr-2 pr-xl-4">Date Range</div>
+                                <div class="d-flex pl-1 justify-content-start align-items-center flex-wrap my">
+                                    <button class="btn px-2 px-lg-3 py-1 btn-sm btn-chart-filter font-weight-bold btn-date-filter2 text-white btn-success mr-1 mr-xl-2 " data-month="6" href="#">6 months
+</button>
+                                    <button class="btn px-2 px-lg-3 py-1 btn-sm btn-chart-filter font-weight-bold btn-date-filter2 text-dark btn-light mr-1 mr-xl-2 " data-month="12" href="#">12 months
+</button>
+                                    <button class="btn px-2 px-lg-3 py-1 btn-sm btn-chart-filter font-weight-bold btn-date-filter2 text-dark btn-light mr-1 mr-xl-2 " data-month="24" href="#">24 months
+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5" id="fuel-line-chat">
+                        <canvas id="petrol-price-chart"></canvas>
+                    </div>
+                    <script>
+                        var unit = 'RM';
+                        var petrol_prices_path = '/petrol-prices';
+                    </script>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+ 
+        </footer>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-21C3LJQ15L"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-21C3LJQ15L');
+        </script>
+        <script>
+            if (typeof fbq === 'undefined') {
+                !function(f, b, e, v, n, t, s) {
+                    if (f.fbq)
+                        return;
+                    n = f.fbq = function() {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    }
+                    ;
+                    if (!f._fbq)
+                        f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = '2.0';
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window, document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '368397893689057');
+            }
+            fbq('track', "PageView");
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" alt="Facebook Pixel" src="https://www.facebook.com/tr?id=368397893689057&ev=PageView&noscript=1"/>
+        </noscript>
+        <script type="text/javascript">
+            _linkedin_partner_id = 3879468;
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        </script>
+        <script type="text/javascript">
+            (function(l) {
+                if (!l) {
+                    window.lintrk = function(a, b) {
+                        window.lintrk.q.push([a, b])
+                    }
+                    ;
+                    window.lintrk.q = []
+                }
+                var s = document.getElementsByTagName('script')[0];
+                var b = document.createElement('script');
+                b.type = 'text/javascript';
+                b.async = true;
+                b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+                s.parentNode.insertBefore(b, s);
+            }
+            )(window.lintrk);
+        </script>
+
+    </body>
+</html>

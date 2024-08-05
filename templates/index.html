@@ -21,31 +21,12 @@
                     <span class="kiosk-title2">KIOSK</span>       
                 </div>
             </div>
-            <div class="petrol-price">
-                <div class="fuel-ron95">
-                    <span class="fuelprice-heading">RON 95</span>
-                    <span class="fuelprice-p">RM2.07</span>
-                </div>
-                <div class="fuel-ron97">
-                    <span class="fuelprice-heading">RON 97</span>
-                    <span class="fuelprice-p">RM4.40</span>
-                </div>
-                <div class="fuel-euro5">
-                    <span class="fuelprice-heading">Euro 5 B7</span>
-                    <span class="fuelprice-p">RM3.50</span>
-                </div>
-                <div class="fuel-diesel">
-                    <span class="fuelprice-heading">Euro 5 B10</span>
-                    <span class="fuelprice-p">RM3.50</span>
-                </div>
-            </div>
         </div>
         
         <h1>Hey,</h1>
         <h2>where's your vehicle?</h2>
         <div class="slots-container">
             <div class="slots-row">
-                
                 <div class="pumps">
                     <button class="pump-button" onclick="toggleOption(this)">
                         <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
@@ -69,31 +50,34 @@
 
         <h1>Choose fuel.</h1>
         <div class="buttons-container">
-            <button class="toggle-button" onclick="toggleOption(this)">
+            <button class="fuel-button" id="fuel-ron95" onclick="toggleOption(this)">
                 <img src="{{ url_for('static', filename='images/ron-95.png') }}" alt="RON 95">
             </button>
-            <button class="toggle-button" onclick="toggleOption(this)">
+            <button class="fuel-button" id="fuel-ron97" onclick="toggleOption(this)">
                 <img src="{{ url_for('static', filename='images/ron-97.png') }}" alt="RON 97">
             </button>
-            <button class="toggle-button" onclick="toggleOption(this)">
+            <button class="fuel-button" id="fuel-euro5" onclick="toggleOption(this)">
                 <img src="{{ url_for('static', filename='images/euro5.png') }}" alt="Euro 5">
             </button>
-            <button class="toggle-button" onclick="toggleOption(this)">
+            <button class="fuel-button" id="fuel-diesel" onclick="toggleOption(this)">
                 <img src="{{ url_for('static', filename='images/diesel.png') }}" alt="Diesel">
             </button>
         </div>
 
+
         <h1>How much?</h1>
-        <div class="amount-container">
-            <div class="amount-display">
-                <p class="amount-rm">RM <span id="amount-rm">0</span></p>
-            </div>
-            <input type="range" id="amount-slider" min="0" max="100" value="0" step="1" oninput="updateAmount()">
-            <div class="amount-display">
-                <p>Liters: <span id="amount-liters">0</span></p>
-            </div>
-            <button class="preauth-button">Pre-Auth Payment</button>
+        <div class="amount-options">
+            <button class="amount-box" onclick="setPresetAmount(20)">RM 20</button>
+            <button class="amount-box" onclick="setPresetAmount(30)">RM 30</button>
+            <button class="amount-box" onclick="setPresetAmount(50)">RM 50</button>
+            <button class="amount-box" onclick="setPresetAmount(80)">RM 80</button>
+            <button class="amount-box" onclick="setPresetAmount(100)">RM 100</button>
+            <button class="amount-box" onclick="setPresetAmount('other')">Other Amount</button>
         </div>
+        <h2 id="amount-rm">RM 0</h2>
+        <h3 id="amount-liters">Liters: 0.00</h3>
+        <input type="range" id="amount-slider" min="0" max="100" value="0" step="1" oninput="updateAmount()" style="display: none;">
+        <button class="preauth-button">Full Tank</button>
     </div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

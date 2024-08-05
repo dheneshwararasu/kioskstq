@@ -83,66 +83,6 @@ body {
     letter-spacing: -0.5px;
 }
 
-.petrol-price {
-    position: absolute;
-    right: 12%;
-    width: 50%;
-    column-count: 4;
-}
-
-
-.fuelprice-heading {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 14px;
-    color: white;
-}
-
-.fuelprice-p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 28px;
-    color: white;
-}
-
-.fuel-ron95 {
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    background-color: orange;
-}
-
-.fuel-ron97 {
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: green;
-    border-radius: 5px;
-}
-
-.fuel-euro5 {
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
-    border-radius: 5px;
-}
-
-.fuel-diesel {
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: #1A1A1A;
-    border-radius: 5px;
-}
-
 h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
@@ -234,7 +174,7 @@ h2 {
     gap: 10px;
 }
 
-.toggle-button {
+.fuel-button {
     width: 50%;
     padding: 5px;
     background-color: #F8F8F6;
@@ -247,51 +187,83 @@ h2 {
     font-style: normal;
     border-style: none;
     border-radius: 10px;
+    filter: grayscale(100%);
+    opacity: 0.2;
+    transition: all 0.3s;
 }
 
-.toggle-button img {
+.fuel-button img {
     width: 100%;
     fill: currentColor; /* Ensures the fill color is controlled by the button's color */
 }
 
-.toggle-button.active {
+.fuel-button.active {
     background-color: #FFCC5A;
     color: black;
     border-style: none;
 }
 
-.toggle-button.active img {
+.fuel-button.active img {
     color: black; /* Change SVG fill to black when the button is active */
 }
 
-.amount-container {
-    margin: 20px 0;
+.fuel-button.enabled {
+    pointer-events: auto;
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.amount-box {
+    width: calc(33.33% - 10px);
+    padding: 10px;
+    background-color: #F8F8F6;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.amount-box.active {
+    background-color: #FFCC5A;
+    color: black;
+    border: 2px solid #000;
+}
+
+.amount-box:hover {
+    background-color: #E0E0E0;
 }
 
 #amount-slider {
     width: 100%;
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.amount-rm {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    font-size: 30px;
-}
-
-.amount-display {
-    display: flex;
-    justify-content: space-around;
-}
 .preauth-button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    background-color: #009688;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #2ba99d;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
+    text-align: center;
+}
+
+.preauth-button:hover {
+    background-color: #00796B;
 }
