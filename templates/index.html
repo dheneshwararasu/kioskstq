@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STQ KIOSK</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo-small.svg">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,400;0,700;1,500;1,800&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STQ KIOSK</title>
+        <link rel="icon" type="image/x-icon" href="/images/logo-small.svg">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,400;0,700;1,500;1,800&display=swap" rel="stylesheet">
+    </head>
 <body>
     <div class="container">
         <div class="header">
@@ -21,65 +21,25 @@
                     <span class="kiosk-title2">KIOSK</span>       
                 </div>
             </div>
-        </div>
-        
-        <h1>Hey,</h1>
-        <h2>where's your vehicle?</h2>
-        <div class="slots-container">
-            <div class="slots-row">
-                <div class="pumps">
-                    <button class="pump-button" onclick="toggleOption(this)">
-                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
-                        <span class="pump-text">1</span>
-                    </button>
-                    <button class="pump-button" onclick="toggleOption(this)">
-                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
-                        <span class="pump-text">2</span>
-                    </button>
-                    <button class="pump-button" onclick="toggleOption(this)">
-                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
-                        <span class="pump-text">3</span>
-                    </button>
-                    <button class="pump-button" onclick="toggleOption(this)">
-                        <img src="{{ url_for('static', filename='images/carIcon.svg') }}" alt="carIcon">
-                        <span class="pump-text">4</span>
-                    </button>
-                </div>
+            <div class="datetime">
+                <span id="date-time"></span>
             </div>
-        </div>    
-
-        <h1>Choose fuel.</h1>
-        <div class="buttons-container">
-            <button class="fuel-button" id="fuel-ron95" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/ron-95.png') }}" alt="RON 95">
-            </button>
-            <button class="fuel-button" id="fuel-ron97" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/ron-97.png') }}" alt="RON 97">
-            </button>
-            <button class="fuel-button" id="fuel-euro5" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/euro5.png') }}" alt="Euro 5">
-            </button>
-            <button class="fuel-button" id="fuel-diesel" onclick="toggleOption(this)">
-                <img src="{{ url_for('static', filename='images/diesel.png') }}" alt="Diesel">
-            </button>
         </div>
-
-
-        <h1>How much?</h1>
-        <div class="amount-options">
-            <button class="amount-box" onclick="setPresetAmount(20)">RM 20</button>
-            <button class="amount-box" onclick="setPresetAmount(30)">RM 30</button>
-            <button class="amount-box" onclick="setPresetAmount(50)">RM 50</button>
-            <button class="amount-box" onclick="setPresetAmount(80)">RM 80</button>
-            <button class="amount-box" onclick="setPresetAmount(100)">RM 100</button>
-            <button class="amount-box" onclick="setPresetAmount('other')">Other Amount</button>
+    
+        <div class="video-section">
+            <video id="video-ad" autoplay loop>
+                <source src="{{ url_for('static', filename='videos/advertisement.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <h2 id="amount-rm">RM 0</h2>
-        <h3 id="amount-liters">Liters: 0.00</h3>
-        <input type="range" id="amount-slider" min="0" max="100" value="0" step="1" oninput="updateAmount()" style="display: none;">
-        <button class="preauth-button">Full Tank</button>
+    
+        <div class="start-button-container">
+            <button class="start-button" onclick="start()">START</button>
+        </div>
+    
+        <div class="footer">
+            <p>Copyright ©️2024 STRATEQ SYSTEMS SDN. BHD. [Registration No. 198801007679 (175036-D)]. All Rights Reserved.</p>
+        </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

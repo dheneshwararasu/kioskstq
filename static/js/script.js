@@ -118,3 +118,22 @@ document.querySelector('.preauth-button').addEventListener('click', function() {
     // Your pre-auth payment logic here
     alert('Pre-Auth Payment');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('video-ad');
+    video.muted = false; // Attempt to unmute the video
+    
+    function updateDateTime() {
+        const dateTimeElement = document.getElementById('date-time');
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        dateTimeElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+});
+
+function start() {
+    window.location.href = "{{ url_for('next') }}";
+}
