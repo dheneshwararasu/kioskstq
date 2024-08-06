@@ -7,7 +7,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/next')
-def page2():
+def next():
     return render_template('next.html')
 
 if __name__ == '__main__':

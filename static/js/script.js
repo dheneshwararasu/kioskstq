@@ -120,20 +120,26 @@ document.querySelector('.preauth-button').addEventListener('click', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Unmute the video
     const video = document.getElementById('video-ad');
-    video.muted = false; // Attempt to unmute the video
-    
+    video.muted = false; // Ensure the video is unmuted
+    video.play();
+
+    // Update date and time every second
     function updateDateTime() {
         const dateTimeElement = document.getElementById('date-time');
         const now = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const options = {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+            hour: '2-digit', minute: '2-digit', second: '2-digit'
+        };
         dateTimeElement.textContent = now.toLocaleDateString('en-US', options);
     }
 
-    setInterval(updateDateTime, 1000);
     updateDateTime();
+    setInterval(updateDateTime, 1000);
 });
 
 function start() {
-    window.location.href = "{{ url_for('next') }}";
+    window.location.href = "/next";
 }
