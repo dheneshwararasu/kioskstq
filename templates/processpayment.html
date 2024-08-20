@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>STQ KIOSK</title>
-        <link rel="icon" type="image/x-icon" href="/images/logo-small.svg">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,400;0,700;1,500;1,800&display=swap" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .payment-container {
+            text-align: center;
+        }
+
+        .status {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .loading-circle {
+            border: 6px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 6px solid #FFCC5A;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
 <body>
+    <div class="payment-container">
+        <div id="status" class="status">Waiting for Payment...</div>
+        <div id="loadingCircle" class="loading-circle" style="display:none;"></div>
+    </div>
 
-    <div id="waiting-payment" class="status-message">Waiting for payment...</div>
-    <div id="processing-payment" class="status-message hidden">Processing payment...</div>
-    <div id="loader" class="loader hidden"></div>
-    <div id="payment-received" class="status-message hidden">Payment received.</div>
-    <div id="generating-receipt" class="status-message hidden">Generating receipt...</div>
+    <script>
+        function updatePaymentStatus() {
+            setTimeout(function() {
+                document.getElementById('status').textContent = 'Processing Payment...';
+                document.getElementById('loadingCircle').style.display = 'block';
+            }, 3000); // 3 seconds delay for waiting
 
-    
+            setTimeout(function() {
+                document.getElementById('status').textContent = 'Payment Received!';
+                document.getElementById('loadingCircle').style.display = 'none';
+            }, 8000); // 5 seconds delay for processing
+
+            setTimeout(function() {
+                document.getElementById('status').textContent = 'Generating Receipt...';
+            }, 10000); // 2 seconds delay for payment received
+
+            setTimeout(function() {
+                window.location.href = "{{ url_for('home') }}";
+            }, 13000); // 3 seconds delay before redirecting to index.html
+        }
+
+        window.onload = updatePaymentStatus;
+    </script>
 </body>
-
 </html>
