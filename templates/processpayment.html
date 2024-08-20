@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STQ KIOSK</title>
+        <link rel="icon" type="image/x-icon" href="/images/logo-small.svg">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,400;0,700;1,500;1,800&display=swap" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </head>
+<body>
+
+    <div id="waiting-payment" class="status-message">Waiting for payment...</div>
+    <div id="processing-payment" class="status-message hidden">Processing payment...</div>
+    <div id="loader" class="loader hidden"></div>
+    <div id="payment-received" class="status-message hidden">Payment received.</div>
+    <div id="generating-receipt" class="status-message hidden">Generating receipt...</div>
+
+    
+</body>
+
+</html>

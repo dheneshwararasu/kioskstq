@@ -240,19 +240,15 @@ h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-    border: 2px solid transparent;
     border-radius: 10px;
     text-align: center;
+    border-style: none;
 }
 
 .amount-box.active {
     background-color: #FFCC5A;
     color: black;
-    border: 2px solid #000;
-}
-
-.amount-box:hover {
-    background-color: #E0E0E0;
+    border-style: none;
 }
 
 #amount-slider {
@@ -264,17 +260,23 @@ h2 {
 .preauth-button {
     width: 100%;
     padding: 10px;
-    background-color: #009688;
-    color: white;
+    background-color: #F8F8F6;
+    color: black;
     font-size: 20px;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
+    transition: background-color 0.1s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 10px;
     text-align: center;
+    border-style: none;
 }
 
-.preauth-button:hover {
+.preauth-button:active {
     background-color: #00796B;
+    color: white;
+    border-style: none;
 }
 
 .video-section {
@@ -330,4 +332,80 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
+}
+
+/* Checkout Button Styling */
+.checkout-section {
+    position: fixed;
+    bottom: 2%;
+    right: 4%;
+    width: 320px;
+    height: auto;
+    background-color: #F8F8F6;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+.checkout-content {
+    text-align: left;
+}
+
+.total-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000;
+}
+
+.total-amount {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.total-liters {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.checkout-icon {
+    width: auto;
+    margin-top: 20px;
+    padding: 35px;
+    background-color: #FFCC5A;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.checkout-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+.status-message {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
 }

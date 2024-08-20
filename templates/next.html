@@ -73,12 +73,27 @@
             <button class="amount-box" onclick="setPresetAmount(80)">RM 80</button>
             <button class="amount-box" onclick="setPresetAmount(100)">RM 100</button>
             <button class="amount-box" onclick="setPresetAmount('other')">Other Amount</button>
+            <button class="preauth-button">Full Tank</button>
         </div>
-        <h2 id="amount-rm">RM 0</h2>
-        <h3 id="amount-liters">Liters: 0.00</h3>
+
         <input type="range" id="amount-slider" min="0" max="100" value="0" step="1" oninput="updateAmount()" style="display: none;">
-        <button class="preauth-button">Full Tank</button>
+        
+        <div class="checkout-section">
+            <div class="checkout-content">
+                <div class="total-label">Total</div>
+                <div class="total-amount" id="amount-rm">RM 0</div>
+                <div class="total-liters" id="amount-liters">Liters: 0.00</div>
+                <div class="checkout-icon">
+                    <img src="{{ url_for('static', filename='images/cart-icon.svg') }}" alt="Checkout">
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

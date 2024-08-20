@@ -143,3 +143,41 @@ document.addEventListener('DOMContentLoaded', function() {
 function start() {
     window.location.href = "/next";
 }
+
+// Redirect to next page on checkout
+document.querySelector(".checkout-section").addEventListener("click", function () {
+    // Redirect to the next page (replace with your actual redirect logic)
+    window.location.href = "/processpayment";
+});
+
+function showProcessing() {
+    document.getElementById('waiting-payment').classList.add('hidden');
+    document.getElementById('processing-payment').classList.remove('hidden');
+    document.getElementById('loader').classList.remove('hidden');
+
+    setTimeout(showPaymentReceived, 3000); // Simulate processing time
+}
+
+function showPaymentReceived() {
+    document.getElementById('processing-payment').classList.add('hidden');
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('payment-received').classList.remove('hidden');
+
+    setTimeout(showGeneratingReceipt, 2000); // Simulate delay before receipt generation
+}
+
+function showGeneratingReceipt() {
+    document.getElementById('payment-received').classList.add('hidden');
+    document.getElementById('generating-receipt').classList.remove('hidden');
+
+    setTimeout(redirectToIndex, 3000); // Simulate delay before redirect
+}
+
+function redirectToIndex() {
+    window.location.href = "{{ url_for('home') }}";
+}
+
+// Start the process after the page loads
+window.onload = function() {
+    setTimeout(showProcessing, 2000); // Simulate waiting time before processing starts
+};
